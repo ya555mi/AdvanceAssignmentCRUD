@@ -6,6 +6,8 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +26,6 @@ public class LoginUserServlet extends HttpServlet {
         String First_Name = request.getParameter("First_Name");
         String Last_Name = request.getParameter("Last_Name");
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = JDBConnection.sqlConnection();
             PreparedStatement st = connection.prepareStatement(
                     "select * from userlogin where userLoginId='" + First_Name + "' and password='" + Last_Name + "'");
@@ -33,8 +34,8 @@ public class LoginUserServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("Username", rs);
             response.sendRedirect("Dasboard.jsp");
-        } catch (Exception e) {
-            out.println("<h1>" + e + "</h1>");
+        } catch (SQLException | ClassNotFoundException sQLException) {
+            out.println("<h1>" + sQLException + "</h1>");
         }
     }
 }

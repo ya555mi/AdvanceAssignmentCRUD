@@ -1,6 +1,7 @@
 
 <%@page import="javax.servlet.http.HttpSession"%>
 <%@page import=" java.sql.ResultSet"%>
+<%@page import=" java.sql.*"%>
 
 
 <%
@@ -60,8 +61,8 @@ table, th, td {
 		<%
 		}
 
-		} catch (Exception e) {
-		out.println(e);
+		} catch (SQLException sQLException) {
+		out.println(sQLException);
 		}
 		%>
 	</table>

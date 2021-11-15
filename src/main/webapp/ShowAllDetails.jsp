@@ -5,6 +5,7 @@
 
 <%@page import="javax.servlet.http.HttpSession"%>
 <%@page import=" java.sql.ResultSet"%>
+<%@page import=" java.sql.*"%>
 
 
 <%
@@ -62,8 +63,7 @@ table, th, td {
 			<td><%=rs.getString("phone")%></td>
 			<td><%=rs.getString("userLoginId")%></td>
 			<td><button type="button" class="  btn-primary" name="button">
-					<a style="color: blue"
-						href="UserUpdate1.jsp?partyId=<%=partyId%>">UPDATE</a>
+					<a style="color: blue" href="UserUpdate1.jsp?partyId=<%=partyId%>">UPDATE</a>
 				</button></td>
 			<td><button type="button" class=" btn-danger">
 					<a style="color: Red" href="DeleteInfo.jsp?partyId=<%=partyId%>">DELETE</a>
@@ -71,8 +71,8 @@ table, th, td {
 			<%
 			}
 
-			} catch (Exception e) {
-			out.println(e);
+			} catch (SQLException sQLException) {
+			out.println(sQLException);
 			}
 			%>
 		

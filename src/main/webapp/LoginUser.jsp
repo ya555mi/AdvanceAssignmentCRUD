@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<%@include file="Dasboard.jsp"%>
+<%-- 	<%@include file="Dasboard.jsp"%> --%>
 	<center>
 		<div class="central-div" style="top: 10%">
 			<h1>Welcome to Hotwax Family</h1>

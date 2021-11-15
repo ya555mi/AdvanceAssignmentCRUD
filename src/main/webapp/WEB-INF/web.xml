@@ -21,7 +21,7 @@
 	</servlet-mapping>
 
 
-		<servlet>
+	<servlet>
 		<servlet-name>SearchUser</servlet-name>
 		<jsp-file>/UserJspSearch.jsp</jsp-file>
 	</servlet>
@@ -30,8 +30,8 @@
 		<url-pattern>/search</url-pattern>
 	</servlet-mapping>
 
-	
-	
+
+
 
 	<servlet>
 		<servlet-name>UserDataBase</servlet-name>
@@ -50,8 +50,8 @@
 		<servlet-name>UserVerify1</servlet-name>
 		<url-pattern>/registration1</url-pattern>
 	</servlet-mapping>
-	
-		<servlet>
+
+	<servlet>
 		<servlet-name>UpdateS</servlet-name>
 		<jsp-file>/UserUpdate1.jsp</jsp-file>
 	</servlet>
@@ -59,7 +59,7 @@
 		<servlet-name>UpdateS</servlet-name>
 		<url-pattern>/update</url-pattern>
 	</servlet-mapping>
-	
+
 
 	<servlet>
 		<servlet-name>UserDetails</servlet-name>
@@ -68,8 +68,20 @@
 	<servlet-mapping>
 		<servlet-name>UserDetails</servlet-name>
 		<url-pattern>/show</url-pattern>
-	</servlet-mapping>	
+	</servlet-mapping>
 	<session-config>
 		<session-timeout>30</session-timeout>
 	</session-config>
+
+
+	<filter>
+		<filter-name>FilterClass</filter-name>
+		<filter-class>Servletpage.FilterClass</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>FilterClass</filter-name>
+		<url-pattern>/show</url-pattern>
+		<url-pattern>/show</url-pattern>
+	</filter-mapping>
+
 </web-app>

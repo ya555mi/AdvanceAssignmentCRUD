@@ -54,8 +54,8 @@ String partyId = request.getParameter("partyId");
 					<tr>
 						<td><label>Last Name</label></td>
 						<td><input type="text" required="fill the filed"
-							value="<%=resultSet.getString(3)%>" name="Last_Name"
-							class="text" placeholder="Last Name"></td>
+							value="<%=resultSet.getString(3)%>" name="Last_Name" class="text"
+							placeholder="Last Name"></td>
 					</tr>
 
 					<tr>
@@ -118,4 +118,4 @@ con.close();
 out.println(sQLException);
 }
 %>
-s
+
